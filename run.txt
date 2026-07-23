@@ -1,0 +1,9 @@
+python -m venv venv
+
+venv/Scripts/activate
+
+pip install -r requirements.txt
+
+python train_classifier.py   # trains the ML model (already included, but rerun if you edit data)
+
+python app.py                # open http://127.0.0.1:5000

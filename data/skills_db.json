@@ -1,0 +1,25 @@
+{
+  "master_skills": [
+    "Python", "Java", "C++", "JavaScript", "React", "Node", "Angular",
+    "HTML", "CSS", "SQL", "NoSQL", "MongoDB", "PostgreSQL",
+    "Machine Learning", "Deep Learning", "TensorFlow", "PyTorch", "Keras",
+    "Scikit-learn", "Pandas", "NumPy", "Power BI", "Tableau", "Excel",
+    "Statistics", "Data Visualization", "NLP", "Computer Vision",
+    "Git", "Docker", "Kubernetes", "AWS", "Azure", "GCP", "Linux",
+    "CI/CD", "Terraform", "REST API", "GraphQL", "Django", "Flask",
+    "FastAPI", "Spring Boot", "System Design", "Data Structures",
+    "Algorithms", "Figma", "Adobe XD", "User Research", "Prototyping",
+    "Agile", "Scrum", "Communication", "Requirements Gathering",
+    "Data Analysis", "Networking", "Cybersecurity"
+  ],
+  "category_requirements": {
+    "Data Scientist": ["Python", "Machine Learning", "Pandas", "NumPy", "TensorFlow", "SQL", "Statistics", "Power BI"],
+    "Software Engineer": ["Java", "Python", "Git", "Data Structures", "Algorithms", "REST API", "SQL", "System Design"],
+    "Python Developer": ["Python", "Django", "Flask", "SQL", "Git", "REST API", "Docker"],
+    "Machine Learning Intern": ["Python", "Machine Learning", "Pandas", "NumPy", "Scikit-learn", "TensorFlow", "Statistics"],
+    "Data Analyst": ["SQL", "Excel", "Power BI", "Python", "Pandas", "Data Visualization", "Statistics"],
+    "Business Analyst": ["SQL", "Excel", "Power BI", "Communication", "Requirements Gathering", "Data Analysis"],
+    "Cloud Engineer": ["AWS", "Docker", "Kubernetes", "Linux", "CI/CD", "Networking", "Terraform"],
+    "UI Designer": ["Figma", "Adobe XD", "HTML", "CSS", "JavaScript", "User Research", "Prototyping"]
+  }
+}

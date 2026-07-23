@@ -1,0 +1,487 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R /F3 7 0 R /F4 8 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (mailto:sumitk.jma@gmail.com)
+>> /Border [ 0 0 0 ] /Rect [ 336.5304 756.8687 421.3922 766.7087 ] /Subtype /Link /Type /Annot
+>>
+endobj
+5 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.linkedin.com/in/sumit-kumar-27a735301/)
+>> /Border [ 0 0 0 ] /Rect [ 175.8186 741.8687 343.5086 751.7087 ] /Subtype /Link /Type /Annot
+>>
+endobj
+6 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/thisumitk)
+>> /Border [ 0 0 0 ] /Rect [ 380.2774 741.8687 455.0122 751.7087 ] /Subtype /Link /Type /Annot
+>>
+endobj
+7 0 obj
+<<
+/BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+>>
+endobj
+8 0 obj
+<<
+/BaseFont /ZapfDingbats /Name /F4 /Subtype /Type1 /Type /Font
+>>
+endobj
+9 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/thisumitk/cGPT)
+>> /Border [ 0 0 0 ] /Rect [ 70.27675 232.4087 168.8477 242.3087 ] /Subtype /Link /Type /Annot
+>>
+endobj
+10 0 obj
+<<
+/Annots [ 4 0 R 5 0 R 6 0 R 9 0 R ] /Contents 14 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 13 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+11 0 obj
+<<
+/PageMode /UseNone /Pages 13 0 R /Type /Catalog
+>>
+endobj
+12 0 obj
+<<
+/Author (Sumit Kumar) /CreationDate (D:20260511235728+05'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20260511235728+05'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (\(unspecified\)) /Title (Sumit Kumar - Resume) /Trapped /False
+>>
+endobj
+13 0 obj
+<<
+/Count 1 /Kids [ 10 0 R ] /Type /Pages
+>>
+endobj
+14 0 obj
+<<
+/Length 10964
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+1 0 0 1 40.01575 784.7087 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 1.5 Tm /F2 18.5 Tf 20 TL 200.0593 0 Td (Sumit Kumar) Tj T* -200.0593 0 Td ET
+Q
+Q
+q
+1 0 0 1 40.01575 770.7087 cm
+q
+BT 1 0 0 1 0 1.8 Tm 71.97695 0 Td 12 TL /F2 10.2 Tf .121569 .160784 .215686 rg (Software Development Engineer | Backend, Messaging Systems & AI Agents) Tj T* -71.97695 0 Td ET
+Q
+Q
+q
+1 0 0 1 40.01575 756.7087 cm
+q
+BT 1 0 0 1 0 1.8 Tm 133.8676 0 Td 10 TL /F1 8.2 Tf .215686 .254902 .317647 rg (Noida, Delhi NCR, India | +91-8058080885 | ) Tj .090196 .305882 .65098 rg (sumitk.jma@gmail.com) Tj T* -133.8676 0 Td ET
+Q
+Q
+q
+1 0 0 1 40.01575 741.7087 cm
+q
+BT 1 0 0 1 0 1.8 Tm 100.2476 0 Td 10 TL /F1 8.2 Tf .215686 .254902 .317647 rg (LinkedIn: ) Tj .090196 .305882 .65098 rg (www.linkedin.com/in/sumit-kumar-27a735301/) Tj .215686 .254902 .317647 rg ( | GitHub: ) Tj .090196 .305882 .65098 rg (github.com/thisumitk) Tj T* -100.2476 0 Td ET
+Q
+Q
+q
+1 0 0 1 40.01575 734.7087 cm
+Q
+q
+1 0 0 1 40.01575 718.7087 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 1.2 Tm /F2 9.8 Tf 11 TL (SUMMARY) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 716.2587 cm
+q
+.45 w
+1 J
+.796078 .835294 .882353 RG
+n 0 0 m 515.2441 0 l S
+Q
+Q
+q
+1 0 0 1 40.01575 685.4587 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 20.55 Tm /F1 8.25 Tf 9.6 TL (SDE building AI-enabled, event-driven CPaaS systems across WhatsApp, RCS, and SMS. Strong in TypeScript/Node.js, Redis Streams,) Tj T* (MongoDB, async processing, API gateways, webhook reliability, observability, and production backend delivery for high-volume messaging) Tj T* (platforms.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 681.4587 cm
+Q
+q
+1 0 0 1 40.01575 665.4587 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 1.2 Tm /F2 9.8 Tf 11 TL (TECHNICAL SKILLS) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 663.0087 cm
+q
+.45 w
+1 J
+.796078 .835294 .882353 RG
+n 0 0 m 515.2441 0 l S
+Q
+Q
+q
+1 0 0 1 40.01575 651.4087 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 1.35 Tm /F1 8.25 Tf 9.6 TL (Languages: TypeScript, JavaScript, SQL; Go reading/debugging/testing with AI-assisted workflows) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 630.2087 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 10.95 Tm /F1 8.25 Tf 9.6 TL (Backend: REST APIs, microservices, event-driven architecture, API gateways, webhook systems, JWT auth, rate limiting, circuit breakers,) Tj T* (idempotency, DLQs) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 618.6087 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 1.35 Tm /F1 8.25 Tf 9.6 TL (Data and Messaging: Redis Streams, BullMQ, Redis Pub/Sub, MongoDB, PostgreSQL, Supabase, GCP Pub/Sub) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 597.4087 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 10.95 Tm /F1 8.25 Tf 9.6 TL (AI and Agents: Gemini API, intent classification, agent routing, prompt/context assembly, knowledge-base retrieval, response caching,) Tj T* (AI-assisted development workflows) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 585.8087 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 1.35 Tm /F1 8.25 Tf 9.6 TL (Infra and Observability: Docker, Nginx, Datadog APM, OpenTelemetry, Prometheus, Zap, Winston, AWS EC2/S3/CloudFront, Git/GitHub) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 574.2087 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 1.35 Tm /F1 8.25 Tf 9.6 TL (Frameworks and Testing: Express.js, Node.js, Next.js, Go test, race tests, benchmarks, Testcontainers, miniredis, testify, Jest) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 570.2087 cm
+Q
+q
+1 0 0 1 40.01575 554.2087 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 1.2 Tm /F2 9.8 Tf 11 TL (EXPERIENCE) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 551.7587 cm
+q
+.45 w
+1 J
+.796078 .835294 .882353 RG
+n 0 0 m 515.2441 0 l S
+Q
+Q
+q
+1 0 0 1 40.01575 540.1587 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 1.35 Tm /F2 8.25 Tf 9.6 TL (Software Development Engineer, Celetel) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 529.1587 cm
+q
+.294118 .333333 .388235 rg
+BT 1 0 0 1 0 1.2 Tm /F3 7.8 Tf 9 TL (Noida, India | Nov 2024 - Present) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 507.9587 cm
+BT /F1 4.5 Tf 5.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 -1 16.2 Tm /F4 4.5 Tf 5.4 TL (l) Tj /F1 4.5 Tf 5.4 TL T* ET
+Q
+q
+1 0 0 1 48.01575 507.9587 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 10.95 Tm /F1 8.25 Tf 9.6 TL (Built backend services for a multi-channel CPaaS platform across WhatsApp, RCS, SMS, webhooks, AI-agent flows, and provider delivery) Tj T* (paths on a 2-engineer team; helped the system withstand 10M+ messages/day.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 487.0587 cm
+BT /F1 4.5 Tf 5.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 -1 16.2 Tm /F4 4.5 Tf 5.4 TL (l) Tj /F1 4.5 Tf 5.4 TL T* ET
+Q
+q
+1 0 0 1 48.01575 487.0587 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 10.95 Tm /F1 8.25 Tf 9.6 TL (Worked on an AI-agent flow processor for WhatsApp conversations, covering event-driven message normalization, intent classification,) Tj T* (agent routing, business-context assembly, knowledge-base lookup, Gemini response generation, Redis-backed caching, and analytics.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 466.1587 cm
+BT /F1 4.5 Tf 5.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 -1 16.2 Tm /F4 4.5 Tf 5.4 TL (l) Tj /F1 4.5 Tf 5.4 TL T* ET
+Q
+q
+1 0 0 1 48.01575 466.1587 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 10.95 Tm /F1 8.25 Tf 9.6 TL (Co-delivered a high-frequency Unified Messaging Service gateway in Go with API-key auth, MongoDB-backed key validation, Redis auth) Tj T* (caching, request tracing, circuit breakers, health probes, and async 202 Accepted publishing to Redis Streams.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 445.2587 cm
+BT /F1 4.5 Tf 5.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 -1 16.2 Tm /F4 4.5 Tf 5.4 TL (l) Tj /F1 4.5 Tf 5.4 TL T* ET
+Q
+q
+1 0 0 1 48.01575 445.2587 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 10.95 Tm /F1 8.25 Tf 9.6 TL (Implemented single and bulk messaging APIs supporting up to 1,000 messages/request; documented gateway benchmarks of roughly) Tj T* (32.5K single-message req/s and 350K bulk msgs/s on single-core Redis-backed tests.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 424.3587 cm
+BT /F1 4.5 Tf 5.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 -1 16.2 Tm /F4 4.5 Tf 5.4 TL (l) Tj /F1 4.5 Tf 5.4 TL T* ET
+Q
+q
+1 0 0 1 48.01575 424.3587 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 10.95 Tm /F1 8.25 Tf 9.6 TL (Co-delivered a Go UMS processor using Redis Streams with XREADGROUP, priority draining, XACK, pending-entry reclaim, DLQ) Tj T* (handling, transformation, provider resolution, template validation, opt-out filtering, batching, and outbound stream publishing.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 403.4587 cm
+BT /F1 4.5 Tf 5.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 -1 16.2 Tm /F4 4.5 Tf 5.4 TL (l) Tj /F1 4.5 Tf 5.4 TL T* ET
+Q
+q
+1 0 0 1 48.01575 403.4587 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 10.95 Tm /F1 8.25 Tf 9.6 TL -0.024672 Tw (Added idempotent MongoDB BulkWrite persistence before delivery fanout, preventing orphaned delivery events; measured UMS processor) Tj T* 0 Tw (throughput at roughly 31.5K full round-trip msgs/s single-threaded and about 94K msgs/s with three consumer goroutines.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 372.9587 cm
+BT /F1 4.5 Tf 5.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 -1 25.8 Tm /F4 4.5 Tf 5.4 TL (l) Tj /F1 4.5 Tf 5.4 TL T* ET
+Q
+q
+1 0 0 1 48.01575 372.9587 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 20.55 Tm /F1 8.25 Tf 9.6 TL (Migrated webhook processing from Supabase-backed retry flows toward GCP Pub/Sub, improving burst reliability while reducing) Tj T* (infrastructure cost and operational load; preserved rollback paths through an additive raw-webhook consumer for Meta WhatsApp, Sinch) Tj T* (RCS, and SMS callbacks.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 342.4587 cm
+BT /F1 4.5 Tf 5.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 -1 25.8 Tm /F4 4.5 Tf 5.4 TL (l) Tj /F1 4.5 Tf 5.4 TL T* ET
+Q
+q
+1 0 0 1 48.01575 342.4587 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 20.55 Tm /F1 8.25 Tf 9.6 TL (Designed disaster-recovery handling for frequent data-center network fluctuations and added production operability: idempotency,) Tj T* (deduplication windows, structured logs, Prometheus/Datadog metrics, trace propagation, readiness/liveness probes, graceful shutdown,) Tj T* (race tests, benchmarks, Testcontainers, and miniredis tests.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 321.5587 cm
+BT /F1 4.5 Tf 5.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 -1 16.2 Tm /F4 4.5 Tf 5.4 TL (l) Tj /F1 4.5 Tf 5.4 TL T* ET
+Q
+q
+1 0 0 1 48.01575 321.5587 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 10.95 Tm /F1 8.25 Tf 9.6 TL (Integrated with coworker-owned notification and IAM services through service contracts, webhook/event flows, auth boundaries, and) Tj T* (operational handoffs.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 310.2587 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 1.35 Tm /F2 8.25 Tf 9.6 TL (Product Management Intern, STAGE) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 299.2587 cm
+q
+.294118 .333333 .388235 rg
+BT 1 0 0 1 0 1.2 Tm /F3 7.8 Tf 9 TL (Gurugram / Remote | Mar 2024 - Sep 2024) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 278.0587 cm
+BT /F1 4.5 Tf 5.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 -1 16.2 Tm /F4 4.5 Tf 5.4 TL (l) Tj /F1 4.5 Tf 5.4 TL T* ET
+Q
+q
+1 0 0 1 48.01575 278.0587 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 10.95 Tm /F1 8.25 Tf 9.6 TL (Proposed and implemented retention experiments; supported product analysis, user-feedback aggregation, market research, and) Tj T* (cross-functional planning with engineering and business stakeholders.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 274.3587 cm
+Q
+q
+1 0 0 1 40.01575 258.3587 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 1.2 Tm /F2 9.8 Tf 11 TL (SELECTED PROJECTS) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 255.9087 cm
+q
+.45 w
+1 J
+.796078 .835294 .882353 RG
+n 0 0 m 515.2441 0 l S
+Q
+Q
+q
+1 0 0 1 40.01575 244.3087 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 1.35 Tm /F2 8.25 Tf 9.6 TL (cGPT - Document-Aware Company Chatbot) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 232.7087 cm
+q
+BT 1 0 0 1 0 1.35 Tm 9.6 TL /F1 8.25 Tf .066667 .094118 .152941 rg (GitHub: ) Tj .090196 .305882 .65098 rg (github.com/thisumitk/cGPT) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 211.5087 cm
+BT /F1 4.5 Tf 5.4 TL ET
+0 0 0 rg
+BT 1 0 0 1 -1 16.2 Tm /F4 4.5 Tf 5.4 TL (l) Tj /F1 4.5 Tf 5.4 TL T* ET
+Q
+q
+1 0 0 1 48.01575 211.5087 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 10.95 Tm /F1 8.25 Tf 9.6 TL (Built an Express.js chatbot backend using OpenAI, LangChain, FAISS vector search, MongoDB, UUID-based sessions, and) Tj T* (document-context retrieval.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 207.8087 cm
+Q
+q
+1 0 0 1 40.01575 191.8087 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 1.2 Tm /F2 9.8 Tf 11 TL (EDUCATION) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 189.3587 cm
+q
+.45 w
+1 J
+.796078 .835294 .882353 RG
+n 0 0 m 515.2441 0 l S
+Q
+Q
+q
+1 0 0 1 40.01575 178.3587 cm
+q
+.294118 .333333 .388235 rg
+BT 1 0 0 1 0 1.2 Tm /F3 7.8 Tf 9 TL (Bachelor of Business Administration \(Hons.\), ITM University Gwalior | 2020 - 2023) Tj T* ET
+Q
+Q
+q
+1 0 0 1 40.01575 157.1587 cm
+q
+.066667 .094118 .152941 rg
+BT 1 0 0 1 0 10.95 Tm /F1 8.25 Tf 9.6 TL (Self-directed CS and backend engineering: CS50, The Odin Project, FreeCodeCamp, production codebase work, distributed systems and) Tj T* (backend architecture practice.) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+xref
+0 15
+0000000000 65535 f 
+0000000061 00000 n 
+0000000122 00000 n 
+0000000229 00000 n 
+0000000341 00000 n 
+0000000520 00000 n 
+0000000722 00000 n 
+0000000902 00000 n 
+0000001017 00000 n 
+0000001100 00000 n 
+0000001285 00000 n 
+0000001527 00000 n 
+0000001597 00000 n 
+0000001883 00000 n 
+0000001944 00000 n 
+trailer
+<<
+/ID 
+[<6e31ac6da71c82013eb5b8ace5d009a2><6e31ac6da71c82013eb5b8ace5d009a2>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 12 0 R
+/Root 11 0 R
+/Size 15
+>>
+startxref
+12961
+%%EOF

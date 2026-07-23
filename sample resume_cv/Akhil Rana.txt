@@ -1,0 +1,29 @@
+As a Software Development Engineer ,you will be an integral part of our software development team, responsible for designing, implementing, and maintaining robust and scalable web applications using Python and the Django framework. You will collaborate closely with cross-functional teams to develop innovative solutions that meet our business requirements.
+
+
+
+Key Responsibilities:
+
+Design, develop, and maintain efficient and reliable Python code to support mobile applications using the Django, Kafka, RabbitMQ, Postgres, Clickhouse, Docker and Kubernetes.
+Collaborate with product management and UX/UI teams to translate requirements into technical solutions.
+Optimize application performance and scalability through continuous improvement and refactoring of code.
+Work on troubleshooting and debugging issues to ensure a smooth deployment process.
+Stay updated with the latest industry trends, tools, and technologies to enhance the team's productivity and effectiveness.
+
+
+Qualifications:
+
+2- 4 years of experience as a Backend Developer, with a strong proficiency in the Python. Good to have knowledge of Django, Kafka, Docker and Kubernetes framework.
+Experience with database systems like SQL, PostgreSQL, or Non Relational Databases.
+Strong understanding of software development principles, design patterns, and best practices.
+Excellent problem-solving skills and the ability to work in a fast-paced environment.
+Good communication skills and the ability to collaborate effectively with cross-functional teams.
+The FRND team operates with alternate saturday week, with the 1st and 3rd Saturdays of each month as working days.
+
+
+About FRND
+
+
+
+FRND is redefining the way people connect by building a social platform that’s not just engaging but also safe, inclusive, and fun. We’re a rapidly growing startup with a bold mission: to transform online interactions into meaningful relationships.
+

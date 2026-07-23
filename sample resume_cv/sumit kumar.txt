@@ -1,0 +1,32 @@
+About the job
+Looking for a hands-on Backend Developer who has independently built and shipped core features using Node.js/python go or similar technologiesand SQL databases. The role demands ownership of end-to-end delivery, from understanding business use cases to deploying and maintaining stable backend services.
+
+Responsibilities
+
+Own features end-to-end: requirements, design, implementation, testing, deployment, and monitoring.
+Work on complex functionalities, not just minor bug fixes or cosmetic changes.
+Design efficient SQL schemas, write optimised queries, and ensure data integrity.
+Collaborate closely with frontend and product teams to ship complete, user-facing features.
+Participate in code reviews, improve code quality, and maintain high engineering standards.
+Troubleshoot production issues and drive root-cause fixes with a big-picture view of the system.
+
+Requirements
+
+2-5 years of experience as a backend developer.
+Strong in Node.js, TypeScript/JavaScript, and SQL (MySQL or similar RDBMS) - SQL is mandatory
+Proven track record of independently building and owning features or modules in production systems.
+Strong grasp of web fundamentals: HTTP, REST APIs, authentication, request-response lifecycle.
+Experience working on Linux-based environments and Git/GitHub workflows.
+Awareness of how their module fits into the larger product architecture and business goals.
+
+Bonus
+
+Strong open-source contributions (GitHub links), especially to web/backend projects.
+Participation in GSoC, hackathons, Codeforces/competitive programming, or similar platforms.
+Internships at strong or reputed product/tech companies with real feature ownership.
+Experience integrating with cloud platforms (AWS/GCP) and basic DevOps exposure.
+
+This job was posted by Sashaank Reddy from Codeyoung.
+
+
+

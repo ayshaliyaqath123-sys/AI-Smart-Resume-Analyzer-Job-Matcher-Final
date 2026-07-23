@@ -1,0 +1,36 @@
+We are on a mission to build the AI-native platform for finance—a multi-agent system that reimagines how investment teams make decisions and empowers them to move faster, think deeper, and operate smarter. Our backend engineers are at the heart of this transformation, building the robust infrastructure and services that power intelligent workflows, turning fragmented financial data into actionable insights with the help of autonomous agents.
+
+What You’ll Do
+
+Architect and develop scalable backend systems using Python and modern cloud-native tools.
+Build APIs, orchestration layers, and data pipelines that support autonomous agents and real-time financial analytics.
+Translate complex financial logic into clear, maintainable, and performant code.
+Collaborate with cross-functional teams—including ML, data, and product— to integrate LLMs, financial logic, and user workflows.
+Own the performance, reliability, and maintainability of mission-critical systems.
+Drive best practices in architectural decisions, testing, devops practices, IaC and system observability.
+
+You Might Be a Fit If You...
+
+Have 3–7 years of backend engineering experience 
+Have built and scaled production-grade backend systems for data-intensive or real-time applications.
+Are excited about building intelligent systems with autonomous behavior, not just CRUD apps.
+Have strong proficiency in Python and experience building distributed backend systems.
+Think in abstractions and API contracts before diving into implementation, and have experience designing and consuming clean, well-structured interfaces (REST, GraphQL, or RPC).
+Have experience with containerization (Docker), orchestration (Kubernetes), and event-driven systems (e.g., Kafka).
+Have deep understanding of relational databases (e.g., PostgreSQL) and caching systems (e.g., Redis).
+Have a strong grasp of performance tuning, code quality, automated testing, CI/CD practices, and building systems that are secure, observable, and production-ready.
+Enjoy working on complex logic and domain modeling in high-stakes environments like fintech, trading, or enterprise SaaS.
+
+Bonus Points
+
+Experience with AI frameworks, LLMs, or multi-agent orchestration platforms (e.g., LangGraph, CrewAI, AutoGen, Haystack, etc.).
+Exposure to financial data modeling, investment workflows, or alternative data pipelines.
+
+Why Join Us?
+
+We're a fast-moving startup backed by Tier 1 VC building in a space ripe for reinvention. If you're excited about redefining how thousands of financial professionals work—using agents, not spreadsheets—you’ll fit right in.
+
+Perks
+
+Competitive compensation
+Unlimited PTO

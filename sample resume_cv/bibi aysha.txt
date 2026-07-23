@@ -1,0 +1,26 @@
+Own backend architecture, design and implementation
+Design and evolve database schema to comply with business requirements
+Work with teams consuming backend APIs in adopting new changes and improvements
+Improve performance, reliability, and security of the infrastructure
+Ability to deal with ambiguity and to anticipate future needs while architecting systems
+Collaborate with other Loop employees including frontend engineers and product managers
+Collaborate with technical leadership to prioritize long-term technical investments and get them on the engineering roadmap
+Educate engineers about new findings and technology best practices through setting up brainstorming, Knowledge-sharing sessions.
+Build cadence in the team around code quality through code reviews, release guidelines and ensure no disruption of core business flows.
+Mentor, lead, hire other engineers.
+
+What We Are Looking For
+
+Bachelor’s/Master's degree in Computer Science Engineering or a related field of study
+4+ years of relevant industry experience
+Expertise in any application programming language like Node, Java, Python 
+Demonstrated ability to build and scale systems
+Strong experience building microservices; scalable and secure APIs
+Strong experience with CSPs like AWS, GCP. Strong experience with at least one of NoSQL (Firestore, MongoDB etc), SQL (MySQL/Postgres) databases and schema design
+Knowledge of modern auth mechanisms, such as JSON Web Token, OAuth, etc
+Experience with continuous integration and continuous delivery
+Experience writing high-quality design docs with architecture diagrams
+Excellent interpersonal skills
+Ability to do cost analysis and optimization of software systems
+Ability to own and lead work on complex technical problems Excitement towards our mission and a strong desire to solve problems in the healthcare domain
+Ability to mentor, lead, and interview other engineers

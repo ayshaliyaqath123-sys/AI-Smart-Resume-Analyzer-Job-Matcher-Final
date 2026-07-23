@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Upload Resume{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center g-4">
+  <div class="col-lg-8">
+    <div class="hero-panel p-4 p-lg-5 mb-4">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <p class="eyebrow">Smart resume intelligence</p>
+          <h1 class="hero-title">Turn your resume into a stronger job application.</h1>
+          <p class="hero-text">Upload your resume, select a target role, and get a polished analysis of your score, skills, gaps, and next steps.</p>
+          <div class="d-flex flex-wrap gap-2">
+            <span class="feature-pill">ATS-friendly insights</span>
+            <span class="feature-pill">Skill gap analysis</span>
+            <span class="feature-pill">Job recommendations</span>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="hero-card">
+            <h5>What you’ll get</h5>
+            <ul class="list-unstyled mb-0">
+              <li>✓ Resume score breakdown</li>
+              <li>✓ Missing skills for your target role</li>
+              <li>✓ Personalized improvement ideas</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card dashboard-card shadow-sm">
+      <div class="card-body p-4 p-lg-5">
+        <h3 class="card-title mb-3">Upload your resume</h3>
+        <p class="text-muted">Get a score, a skill gap analysis, missing skills for your target role, and job recommendations - all in one go.</p>
+
+        {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+        {% endif %}
+
+        <form action="{{ url_for('analyze') }}" method="post" enctype="multipart/form-data">
+          <div class="mb-3">
+            <label class="form-label">Resume file (PDF or DOCX)</label>
+            <input class="form-control" type="file" name="resume" accept=".pdf,.docx" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Target job category</label>
+            <select class="form-select" name="category">
+              <option value="">-- Select a category --</option>
+              {% for c in categories %}
+              <option value="{{ c }}">{{ c }}</option>
+              {% endfor %}
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Paste a job description (optional)</label>
+            <textarea class="form-control" name="job_description" rows="4"
+              placeholder="Paste a specific job posting here to get a match score and missing keywords..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg w-100">Analyze Resume</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

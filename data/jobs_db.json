@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Data Analyst",
+    "description": "We are looking for a Data Analyst skilled in SQL, Excel, Power BI, Python and Pandas to analyze business data, build dashboards, and support data-driven decisions. Strong statistics and data visualization skills required.",
+    "required_skills": ["SQL", "Excel", "Power BI", "Python", "Pandas", "Data Visualization", "Statistics"]
+  },
+  {
+    "title": "Machine Learning Intern",
+    "description": "Seeking a Machine Learning intern with experience in Python, Scikit-learn, TensorFlow, Pandas and NumPy to help build and evaluate predictive models. Knowledge of statistics is a plus.",
+    "required_skills": ["Python", "Machine Learning", "Scikit-learn", "TensorFlow", "Pandas", "NumPy", "Statistics"]
+  },
+  {
+    "title": "Python Developer",
+    "description": "Backend Python Developer role requiring Django or Flask, REST API design, SQL databases, Git version control and Docker for containerized deployments.",
+    "required_skills": ["Python", "Django", "Flask", "REST API", "SQL", "Git", "Docker"]
+  },
+  {
+    "title": "Business Analyst",
+    "description": "Business Analyst needed to gather requirements, analyze data with SQL and Excel, build Power BI reports, and communicate insights to stakeholders.",
+    "required_skills": ["SQL", "Excel", "Power BI", "Requirements Gathering", "Communication", "Data Analysis"]
+  },
+  {
+    "title": "Data Scientist",
+    "description": "Data Scientist role focused on machine learning, deep learning with TensorFlow, data analysis using Pandas and NumPy, SQL, and statistical modeling to solve business problems.",
+    "required_skills": ["Python", "Machine Learning", "TensorFlow", "Pandas", "NumPy", "SQL", "Statistics"]
+  },
+  {
+    "title": "Software Engineer",
+    "description": "Software Engineer position requiring strong Java or Python skills, data structures and algorithms, REST API development, Git, and system design experience.",
+    "required_skills": ["Java", "Python", "Data Structures", "Algorithms", "REST API", "Git", "System Design"]
+  },
+  {
+    "title": "Cloud Engineer",
+    "description": "Cloud Engineer to manage AWS infrastructure, Docker and Kubernetes deployments, CI/CD pipelines, Terraform automation and Linux administration.",
+    "required_skills": ["AWS", "Docker", "Kubernetes", "CI/CD", "Terraform", "Linux", "Networking"]
+  },
+  {
+    "title": "UI/UX Designer",
+    "description": "UI/UX Designer with expertise in Figma, Adobe XD, HTML, CSS, user research and prototyping to design intuitive product interfaces.",
+    "required_skills": ["Figma", "Adobe XD", "HTML", "CSS", "User Research", "Prototyping"]
+  }
+]

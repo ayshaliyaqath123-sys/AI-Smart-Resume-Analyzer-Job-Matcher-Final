@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Resume Chatbot{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-8">
+    <div class="hero-panel p-4 p-lg-5 mb-4">
+      <p class="eyebrow">Resume coaching assistant</p>
+      <h3 class="hero-title mb-2">Ask about your resume</h3>
+      <p class="hero-text mb-0">Get quick guidance on ATS performance, skill gaps, project ideas, and ways to improve your profile.</p>
+    </div>
+
+    <div class="card dashboard-card shadow-sm">
+      <div class="card-body p-4 p-lg-5">
+        <div id="chat-window" class="mb-3 chat-window"></div>
+        <div class="input-group chat-input-group">
+          <input type="text" id="chat-input" class="form-control" placeholder="e.g. Why is my ATS score low?">
+          <button class="btn btn-primary" id="chat-send">Send</button>
+        </div>
+        <div class="mt-3 d-flex flex-wrap gap-2">
+          <button class="btn btn-sm btn-outline-secondary suggestion">How can I improve my resume?</button>
+          <button class="btn btn-sm btn-outline-secondary suggestion">Which project should I add?</button>
+          <button class="btn btn-sm btn-outline-secondary suggestion">Why is my ATS score low?</button>
+          <button class="btn btn-sm btn-outline-secondary suggestion">What skills should I learn?</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const chatWindow = document.getElementById('chat-window');
+const chatInput = document.getElementById('chat-input');
+const chatSend = document.getElementById('chat-send');
+
+function appendMessage(text, sender) {
+  const bubble = document.createElement('div');
+  bubble.className = sender === 'user' ? 'text-end mb-2' : 'text-start mb-2';
+  const inner = document.createElement('div');
+  inner.className = sender === 'user' ? 'chat-bubble chat-bubble-user' : 'chat-bubble chat-bubble-bot';
+  inner.textContent = text;
+  bubble.appendChild(inner);
+  chatWindow.appendChild(bubble);
+  chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+async function sendQuestion(question) {
+  if (!question.trim()) return;
+  appendMessage(question, 'user');
+  chatInput.value = '';
+
+  const res = await fetch('/api/chat', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({question: question})
+  });
+  const data = await res.json();
+  appendMessage(data.answer, 'bot');
+}
+
+chatSend.addEventListener('click', () => sendQuestion(chatInput.value));
+chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendQuestion(chatInput.value); });
+document.querySelectorAll('.suggestion').forEach(btn => {
+  btn.addEventListener('click', () => sendQuestion(btn.textContent));
+});
+
+appendMessage("Hi! I've reviewed your resume - ask me anything about your score, missing skills, or how to improve it.", 'bot');
+</script>
+{% endblock %}

@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% block title %}Resume Analysis{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-center gap-3 mb-4">
+  <div>
+    <p class="eyebrow mb-2">Analysis complete</p>
+    <h3 class="mb-0">Resume Analysis</h3>
+  </div>
+  <div class="d-flex flex-wrap gap-2">
+    <a href="{{ url_for('chat_page') }}" class="btn btn-outline-primary">💬 Ask the AI Chatbot</a>
+    <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">Analyze another resume</a>
+  </div>
+</div>
+
+<div class="card dashboard-card shadow-sm mb-4">
+  <div class="card-body p-4 p-lg-5">
+    <div class="d-flex flex-column flex-md-row justify-content-between gap-3 align-items-md-center mb-4">
+      <div>
+        <h5 class="card-title">Resume Score</h5>
+        <p class="text-muted mb-0">Your current profile strength against the selected role.</p>
+      </div>
+      <div class="score-badge">{{ scores.overall }}%</div>
+    </div>
+
+    {% for label, key in [("Skills","skills"), ("Education","education"), ("Projects","projects"),
+                           ("Experience","experience"), ("Formatting","formatting"), ("ATS Score","ats")] %}
+    <div class="mb-3">
+      <div class="d-flex justify-content-between mb-1">
+        <span>{{ label }}</span><span>{{ scores[key] }}%</span>
+      </div>
+      <div class="progress" style="height: 8px;">
+        <div class="progress-bar" role="progressbar" style="width: {{ scores[key] }}%;"></div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% if predicted_category %}
+<div class="alert alert-info rounded-4">
+  Our ML model predicts this resume best fits: <strong>{{ predicted_category.category }}</strong>
+  ({{ predicted_category.confidence }}% confidence)
+</div>
+{% endif %}
+
+<div class="row">
+  <div class="col-md-6 mb-4">
+    <div class="card dashboard-card h-100">
+      <div class="card-body p-4">
+        <h5 class="card-title">Detected Skills</h5>
+        {% for skill in found_skills %}
+        <span class="badge skill-badge me-1 mb-2">{{ skill }}</span>
+        {% else %}
+        <p class="text-muted">No known skills detected.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 mb-4">
+    <div class="card dashboard-card h-100">
+      <div class="card-body p-4">
+        <h5 class="card-title">Missing Skills {% if category %}for {{ category }}{% endif %}</h5>
+        {% for skill in missing_skills %}
+        <span class="badge missing-skill-badge me-1 mb-2">{{ skill }}</span>
+        {% else %}
+        <p class="text-muted">{% if category %}None - you cover the core skills!{% else %}Select a target category to see this.{% endif %}</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% if chart_data_uri %}
+<div class="card dashboard-card mb-4">
+  <div class="card-body p-4 text-center">
+    <h5 class="card-title text-start">Skill Gap Visualization</h5>
+    <img src="{{ chart_data_uri }}" class="img-fluid rounded-3" alt="Skill gap chart">
+  </div>
+</div>
+{% endif %}
+
+{% if jd_match %}
+<div class="card dashboard-card mb-4">
+  <div class="card-body p-4">
+    <h5 class="card-title">Job Description Match</h5>
+    <h2 class="text-primary fw-bold">{{ jd_match.match_score }}%</h2>
+    <p class="fw-semibold mb-2">Missing Keywords:</p>
+    {% for kw in jd_match.missing_keywords %}
+    <span class="badge keyword-badge me-1 mb-2">{{ kw }}</span>
+    {% else %}
+    <p class="text-muted">No missing keywords detected.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<div class="card dashboard-card mb-4">
+  <div class="card-body p-4">
+    <h5 class="card-title">Recommended Jobs</h5>
+    <ul class="list-group list-group-flush">
+      {% for job in jobs %}
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+        <span>{{ job.title }}</span>
+        <span class="badge bg-primary rounded-pill">{{ job.match_score }}%</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6 mb-4">
+    <div class="card dashboard-card h-100">
+      <div class="card-body p-4">
+        <h5 class="card-title">Improvement Suggestions</h5>
+        <ul class="mb-0 ps-3">
+          {% for tip in suggestions %}
+          <li>{{ tip }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-6 mb-4">
+    <div class="card dashboard-card h-100">
+      <div class="card-body p-4">
+        <h5 class="card-title">Portfolio Project Ideas</h5>
+        <ul class="mb-0 ps-3">
+          {% for idea in portfolio_ideas %}
+          <li>{{ idea }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

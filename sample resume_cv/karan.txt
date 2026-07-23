@@ -1,0 +1,49 @@
+We are looking for a backend developer with strong hands-on experience in .NET Core, microservices architecture, and database development. In this role, you will work on developing modern APIs, integrating third-party systems, and building the backend layer for operational tooling and automation. If you’re excited about backend scalability, performance, and seamless integrations—we’d like to meet you!
+
+Role And Responsibilities
+
+Design, develop, and maintain APIs and backend services using .NET Core (.NET 6/8) and C#.
+
+Build robust and scalable microservice-based systems following best practices and SOLID principles.
+
+Work with SQL Server to design schemas, write complex stored procedures, and optimize performance.
+
+Conduct research and proof-of-concepts (PoCs) related to backend automation and tool integrations.
+
+Integrate with external platforms and APIs such as Jira, ServiceNow, Microsoft Defender, and AWS Security Hub.
+
+Participate in Agile development processes, including sprint planning, estimation, and code reviews.
+
+Collaborate with frontend, DevOps, QA, and product teams to deliver production-grade software.
+
+Contribute to architecture discussions, technical design, and mentoring when required.
+
+Required Skills
+
+5+ years of hands-on experience in .NET Core (API development) and C#.
+
+Strong experience designing and implementing microservices and scalable backend systems.
+
+Solid understanding of RESTful API design, asynchronous programming, and message queues.
+
+Proficiency in SQL Server database design and optimization.
+
+Experience with containerization (e.g., Docker) and CI/CD pipelines.
+
+Strong debugging and problem-solving skills.
+
+Optional (Nice To Have) Skills
+
+Hands-on with automated evidence collection tools or scripting systems.
+
+Exposure to GRC platforms or compliance frameworks (e.g., SOC 2, PCI-DSS, ISO 27001).
+
+Experience integrating with third-party security or workflow platforms (e.g., Microsoft Defender, AWS Security Hub, Jira, ServiceNow).
+
+Familiarity with OAuth2, SAML, and API security best practices.
+
+Experience with cloud platforms (AWS, Azure) and Python is a plus.
+
+Education Requirements
+
+Bachelor’s or Master’s degree in Computer Science, Information Technology, or a related field.

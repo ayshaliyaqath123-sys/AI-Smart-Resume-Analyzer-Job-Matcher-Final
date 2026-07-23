@@ -1,0 +1,18 @@
+Seeking a skilled Python Developer to design, develop, and maintain scalable applications, APIs, and microservices. The ideal candidate should have strong Python programming expertise, experience with cloud platforms like Azure, databases, and modern software development practices.
+
+Key Responsibilities
+
+Develop and maintain Python-based applications and REST APIs.
+Build scalable microservices using FastAPI.
+Integrate with databases, third-party services, and cloud platforms.
+Write clean, efficient, and testable code.
+Perform unit testing, code reviews, debugging, and performance optimization.
+Collaborate with cross-functional teams in an Agile environment.
+
+Required Skills
+
+Strong proficiency in Python 3.x, OOP, and data structures.
+Experience with FastAPI
+Knowledge of REST APIs, PostgreSQL/MySQL
+Experience with AWS/Azure, Docker, and Git.
+Familiarity with Pytest, CI/CD pipelines, and Agile methodologies.
