@@ -1,4 +1,4 @@
-services:
+-services:
   - type: web
     name: ai-smart-resume-analyzer
     env: python
