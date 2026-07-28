@@ -13,27 +13,39 @@
   </div>
 </div>
 
-<div class="card dashboard-card shadow-sm mb-4">
+<div class="card dashboard-card premium-score-card shadow-sm mb-4">
   <div class="card-body p-4 p-lg-5">
-    <div class="d-flex flex-column flex-md-row justify-content-between gap-3 align-items-md-center mb-4">
-      <div>
-        <h5 class="card-title">Resume Score</h5>
-        <p class="text-muted mb-0">Your current profile strength against the selected role.</p>
+    <div class="score-hero">
+      <div class="score-ring" style="--score: {{ scores.overall }};">
+        <div class="score-ring-value">{{ scores.overall }}<span>%</span></div>
+        <div class="score-ring-label">Overall Match</div>
       </div>
-      <div class="score-badge">{{ scores.overall }}%</div>
+      <div class="score-hero-content">
+        <p class="eyebrow mb-2">Resume Score</p>
+        <h5 class="card-title mb-2">Strong profile strength</h5>
+        <p class="text-muted mb-3">Your current profile shows a compelling fit for the target role, with room to sharpen a few key areas.</p>
+        <div class="score-pill-wrapper">
+          <span class="score-pill">ATS-ready</span>
+          <span class="score-pill">Skill aligned</span>
+          <span class="score-pill">Interview ready</span>
+        </div>
+      </div>
     </div>
 
-    {% for label, key in [("Skills","skills"), ("Education","education"), ("Projects","projects"),
-                           ("Experience","experience"), ("Formatting","formatting"), ("ATS Score","ats")] %}
-    <div class="mb-3">
-      <div class="d-flex justify-content-between mb-1">
-        <span>{{ label }}</span><span>{{ scores[key] }}%</span>
+    <div class="score-breakdown mt-4">
+      {% for label, key in [("Skills","skills"), ("Education","education"), ("Projects","projects"),
+                             ("Experience","experience"), ("Formatting","formatting"), ("ATS Score","ats")] %}
+      <div class="score-metric">
+        <div class="metric-label-row">
+          <span>{{ label }}</span>
+          <span class="metric-value">{{ scores[key] }}%</span>
+        </div>
+        <div class="progress" style="height: 8px;">
+          <div class="progress-bar" role="progressbar" style="width: {{ scores[key] }}%;"></div>
+        </div>
       </div>
-      <div class="progress" style="height: 8px;">
-        <div class="progress-bar" role="progressbar" style="width: {{ scores[key] }}%;"></div>
-      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
 </div>
 
@@ -46,64 +58,163 @@
 
 <div class="row">
   <div class="col-md-6 mb-4">
-    <div class="card dashboard-card h-100">
+    <div class="card dashboard-card h-100 skills-panel">
       <div class="card-body p-4">
-        <h5 class="card-title">Detected Skills</h5>
-        {% for skill in found_skills %}
-        <span class="badge skill-badge me-1 mb-2">{{ skill }}</span>
-        {% else %}
-        <p class="text-muted">No known skills detected.</p>
-        {% endfor %}
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <div>
+            <h5 class="card-title mb-1">Detected Skills</h5>
+            <p class="text-muted mb-0 small">Your resume highlights these capabilities.</p>
+          </div>
+          <span class="skills-count-pill">{{ found_skills|length }} found</span>
+        </div>
+        <div class="skills-cloud">
+          {% for skill in found_skills %}
+          <span class="badge skill-badge">{{ skill }}</span>
+          {% else %}
+          <p class="text-muted mb-0">No known skills detected.</p>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
 
   <div class="col-md-6 mb-4">
-    <div class="card dashboard-card h-100">
+    <div class="card dashboard-card h-100 missing-skills-panel">
       <div class="card-body p-4">
-        <h5 class="card-title">Missing Skills {% if category %}for {{ category }}{% endif %}</h5>
-        {% for skill in missing_skills %}
-        <span class="badge missing-skill-badge me-1 mb-2">{{ skill }}</span>
-        {% else %}
-        <p class="text-muted">{% if category %}None - you cover the core skills!{% else %}Select a target category to see this.{% endif %}</p>
-        {% endfor %}
+        <div class="d-flex justify-content-between align-items-start mb-3">
+          <div>
+            <h5 class="card-title mb-1">Missing Skills {% if category %}for {{ category }}{% endif %}</h5>
+            <p class="text-muted mb-0 small">Focus areas to strengthen your profile.</p>
+          </div>
+          <span class="skills-count-pill missing-count-pill">{{ missing_skills|length }} gaps</span>
+        </div>
+        <div class="skills-cloud">
+          {% for skill in missing_skills %}
+          <span class="badge missing-skill-badge">{{ skill }}</span>
+          {% else %}
+          <p class="text-muted mb-0">{% if category %}None - you cover the core skills!{% else %}Select a target category to see this.{% endif %}</p>
+          {% endfor %}
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-{% if chart_data_uri %}
+{% if chart_data %}
 <div class="card dashboard-card mb-4">
-  <div class="card-body p-4 text-center">
-    <h5 class="card-title text-start">Skill Gap Visualization</h5>
-    <img src="{{ chart_data_uri }}" class="img-fluid rounded-3" alt="Skill gap chart">
+  <div class="card-body p-4">
+    <div class="d-flex justify-content-between align-items-start mb-3">
+      <div>
+        <h5 class="card-title mb-1">Skill Gap Visualization</h5>
+        <p class="text-muted mb-0 small">Hover over each row to see whether the skill is matched or still missing.</p>
+      </div>
+      <span class="skills-count-pill">Hover live</span>
+    </div>
+    <div class="skill-gap-chart" id="skillGapChart">
+      <div class="skill-gap-legend">
+        <span class="legend-chip legend-chip-match">Matched</span>
+        <span class="legend-chip legend-chip-missing">Missing</span>
+      </div>
+      <div class="skill-gap-rows" id="skillGapRows"></div>
+      <div class="skill-gap-tooltip" id="skillGapTooltip"></div>
+    </div>
   </div>
 </div>
+
+<script>
+  const skillGapChartData = {{ chart_data | tojson }};
+  const skillGapRows = document.getElementById('skillGapRows');
+  const skillGapTooltip = document.getElementById('skillGapTooltip');
+
+  if (skillGapRows && skillGapChartData && skillGapChartData.labels) {
+    skillGapRows.innerHTML = skillGapChartData.labels.map((label, index) => {
+      const status = skillGapChartData.statuses[index];
+      const value = skillGapChartData.values[index];
+      const width = value === 1 ? 100 : 36;
+      const barClass = value === 1 ? 'skill-gap-bar matched' : 'skill-gap-bar missing';
+      return `
+        <div class="skill-gap-row" data-label="${label}" data-status="${status}" data-value="${value}">
+          <span class="skill-gap-label">${label}</span>
+          <div class="skill-gap-track">
+            <div class="${barClass}" style="width: ${width}%;"></div>
+          </div>
+          <span class="skill-gap-status">${status}</span>
+        </div>
+      `;
+    }).join('');
+
+    skillGapRows.querySelectorAll('.skill-gap-row').forEach((row) => {
+      row.addEventListener('mouseenter', (event) => {
+        const label = row.dataset.label;
+        const status = row.dataset.status;
+        const value = row.dataset.value;
+        skillGapTooltip.innerHTML = `<strong>${label}</strong><br>${status} · ${value === '1' ? 'Present in resume' : 'Needs attention'}`;
+        skillGapTooltip.classList.add('show');
+        const rect = event.currentTarget.getBoundingClientRect();
+        const containerRect = skillGapRows.parentElement.getBoundingClientRect();
+        skillGapTooltip.style.left = `${rect.right - containerRect.left + 12}px`;
+        skillGapTooltip.style.top = `${rect.top - containerRect.top - 4}px`;
+      });
+
+      row.addEventListener('mousemove', (event) => {
+        const containerRect = skillGapRows.parentElement.getBoundingClientRect();
+        skillGapTooltip.style.left = `${event.clientX - containerRect.left + 12}px`;
+        skillGapTooltip.style.top = `${event.clientY - containerRect.top - 8}px`;
+      });
+
+      row.addEventListener('mouseleave', () => {
+        skillGapTooltip.classList.remove('show');
+      });
+    });
+  }
+</script>
 {% endif %}
 
 {% if jd_match %}
-<div class="card dashboard-card mb-4">
-  <div class="card-body p-4">
-    <h5 class="card-title">Job Description Match</h5>
-    <h2 class="text-primary fw-bold">{{ jd_match.match_score }}%</h2>
-    <p class="fw-semibold mb-2">Missing Keywords:</p>
-    {% for kw in jd_match.missing_keywords %}
-    <span class="badge keyword-badge me-1 mb-2">{{ kw }}</span>
-    {% else %}
-    <p class="text-muted">No missing keywords detected.</p>
-    {% endfor %}
+<div class="card dashboard-card job-match-card mb-4">
+  <div class="card-body p-4 p-lg-5">
+    <div class="job-match-header">
+      <div>
+        <p class="eyebrow mb-2">Role alignment</p>
+        <h5 class="card-title mb-1">Job Description Match</h5>
+        <p class="text-muted mb-0">How closely your resume aligns with the target job posting.</p>
+      </div>
+      <div class="job-match-score-pill">{{ jd_match.match_score }}%</div>
+    </div>
+
+    <div class="job-match-content mt-4">
+      <div class="job-match-summary">
+        <div class="summary-label">Match Strength</div>
+        <div class="summary-value">{% if jd_match.match_score >= 80 %}Excellent{% elif jd_match.match_score >= 60 %}Strong{% elif jd_match.match_score >= 40 %}Moderate{% else %}Needs improvement{% endif %}</div>
+      </div>
+
+      <div class="job-match-keywords">
+        <div class="fw-semibold mb-2">Missing Keywords</div>
+        {% for kw in jd_match.missing_keywords %}
+        <span class="badge keyword-badge me-1 mb-2">{{ kw }}</span>
+        {% else %}
+        <p class="text-muted mb-0">No missing keywords detected.</p>
+        {% endfor %}
+      </div>
+    </div>
   </div>
 </div>
 {% endif %}
 
-<div class="card dashboard-card mb-4">
-  <div class="card-body p-4">
-    <h5 class="card-title">Recommended Jobs</h5>
-    <ul class="list-group list-group-flush">
+<div class="card dashboard-card insight-card mb-4">
+  <div class="card-body p-4 p-lg-5">
+    <div class="insight-header mb-3">
+      <div>
+        <p class="eyebrow mb-2">Opportunities</p>
+        <h5 class="card-title mb-1">Recommended Jobs</h5>
+      </div>
+      <span class="insight-pill">{{ jobs|length }} matches</span>
+    </div>
+    <ul class="list-group list-group-flush insight-list">
       {% for job in jobs %}
       <li class="list-group-item d-flex justify-content-between align-items-center">
-        <span>{{ job.title }}</span>
-        <span class="badge bg-primary rounded-pill">{{ job.match_score }}%</span>
+        <span class="insight-item-title">{{ job.title }}</span>
+        <span class="badge insight-badge rounded-pill">{{ job.match_score }}%</span>
       </li>
       {% endfor %}
     </ul>
@@ -112,10 +223,16 @@
 
 <div class="row">
   <div class="col-md-6 mb-4">
-    <div class="card dashboard-card h-100">
+    <div class="card dashboard-card h-100 insight-card">
       <div class="card-body p-4">
-        <h5 class="card-title">Improvement Suggestions</h5>
-        <ul class="mb-0 ps-3">
+        <div class="insight-header mb-3">
+          <div>
+            <p class="eyebrow mb-2">Growth</p>
+            <h5 class="card-title mb-1">Improvement Suggestions</h5>
+          </div>
+          <span class="insight-pill">Tips</span>
+        </div>
+        <ul class="mb-0 ps-3 insight-list-items">
           {% for tip in suggestions %}
           <li>{{ tip }}</li>
           {% endfor %}
@@ -125,10 +242,16 @@
   </div>
 
   <div class="col-md-6 mb-4">
-    <div class="card dashboard-card h-100">
+    <div class="card dashboard-card h-100 insight-card">
       <div class="card-body p-4">
-        <h5 class="card-title">Portfolio Project Ideas</h5>
-        <ul class="mb-0 ps-3">
+        <div class="insight-header mb-3">
+          <div>
+            <p class="eyebrow mb-2">Portfolio</p>
+            <h5 class="card-title mb-1">Portfolio Project Ideas</h5>
+          </div>
+          <span class="insight-pill">Ideas</span>
+        </div>
+        <ul class="mb-0 ps-3 insight-list-items">
           {% for idea in portfolio_ideas %}
           <li>{{ idea }}</li>
           {% endfor %}

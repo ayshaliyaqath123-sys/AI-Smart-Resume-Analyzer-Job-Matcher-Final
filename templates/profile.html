@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block title %}My Profile{% endblock %}
+
+{% block content %}
+<div class="profile-shell">
+  <div class="profile-card">
+    <div class="profile-hero">
+      <div class="profile-avatar">{{ current_user.name[0]|upper }}</div>
+      <div>
+        <p class="eyebrow mb-2">Signed in account</p>
+        <h2 class="mb-1">{{ current_user.name }}</h2>
+        <p class="text-muted mb-0">{{ current_user.email }}</p>
+      </div>
+    </div>
+
+    <div class="profile-grid">
+      <div class="profile-panel">
+        <h5 class="card-title mb-3">Account details</h5>
+        <div class="profile-item"><span>Name</span><strong>{{ current_user.name }}</strong></div>
+        <div class="profile-item"><span>Email</span><strong>{{ current_user.email }}</strong></div>
+        <div class="profile-item"><span>Status</span><strong>Active</strong></div>
+      </div>
+
+      <div class="profile-panel">
+        <h5 class="card-title mb-3">Quick actions</h5>
+        <a href="{{ url_for('index') }}" class="btn btn-primary w-100 mb-2">Analyze a new resume</a>
+        <a href="{{ url_for('chat_page') }}" class="btn btn-outline-primary w-100">Open AI Chatbot</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

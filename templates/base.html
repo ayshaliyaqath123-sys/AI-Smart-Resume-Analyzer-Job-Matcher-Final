@@ -23,6 +23,10 @@
       <div class="navbar-nav ms-auto d-flex align-items-center gap-2">
         <a class="nav-link nav-pill" href="{{ url_for('index') }}">Resume Upload</a>
         <a class="nav-link nav-pill active" href="{{ url_for('chat_page') }}">AI Chatbot</a>
+        {% if current_user %}
+        <a class="nav-link nav-pill" href="{{ url_for('profile') }}">👤 Profile</a>
+        <a class="nav-link nav-pill" href="{{ url_for('signout') }}">Sign out</a>
+        {% endif %}
       </div>
     </div>
   </nav>

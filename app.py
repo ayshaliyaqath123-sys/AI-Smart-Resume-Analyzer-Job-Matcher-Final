@@ -7,8 +7,11 @@ Run with:
 Then open http://127.0.0.1:5000 in your browser.
 """
 import os
+import sqlite3
 import uuid
+from datetime import datetime
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from werkzeug.security import check_password_hash, generate_password_hash
 from werkzeug.utils import secure_filename
 
 from utils.extractor import extract_text
@@ -21,6 +24,7 @@ from utils import classifier
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 UPLOAD_FOLDER = os.path.join(BASE_DIR, "static", "uploads")
+DB_PATH = os.path.join(BASE_DIR, "users.db")
 ALLOWED_EXTENSIONS = {"pdf", "docx"}
 MAX_CONTENT_LENGTH = 5 * 1024 * 1024  # 5 MB
 
@@ -30,6 +34,137 @@ app.config["MAX_CONTENT_LENGTH"] = MAX_CONTENT_LENGTH
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", "dev-secret-key-change-me")
 
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+
+def init_db() -> None:
+    conn = sqlite3.connect(DB_PATH)
+    conn.execute(
+        """
+        CREATE TABLE IF NOT EXISTS users (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT NOT NULL,
+            email TEXT UNIQUE NOT NULL,
+            password TEXT NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+        """
+    )
+    conn.execute(
+        """
+        CREATE TABLE IF NOT EXISTS analysis_history (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_email TEXT,
+            user_name TEXT,
+            category TEXT,
+            overall_score REAL,
+            skills_score REAL,
+            education_score REAL,
+            projects_score REAL,
+            experience_score REAL,
+            formatting_score REAL,
+            ats_score REAL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+        """
+    )
+    conn.commit()
+    conn.close()
+
+
+def get_db() -> sqlite3.Connection:
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    return conn
+
+
+def get_user_by_email(email: str):
+    normalized_email = (email or "").strip().lower()
+    conn = get_db()
+    user = conn.execute("SELECT * FROM users WHERE lower(email) = ?", (normalized_email,)).fetchone()
+    if user is None:
+        user = conn.execute("SELECT * FROM users WHERE email = ? COLLATE NOCASE", (normalized_email,)).fetchone()
+    conn.close()
+    return user
+
+
+def create_user(name: str, email: str, password: str):
+    conn = get_db()
+    cursor = conn.execute(
+        "INSERT INTO users (name, email, password) VALUES (?, ?, ?)",
+        (name, email.lower(), generate_password_hash(password)),
+    )
+    conn.commit()
+    user_id = cursor.lastrowid
+    conn.close()
+    return user_id
+
+
+def verify_password(stored_password: str, provided_password: str) -> bool:
+    if not stored_password:
+        return False
+
+    if stored_password == provided_password:
+        return True
+
+    try:
+        return check_password_hash(stored_password, provided_password)
+    except Exception:
+        return False
+
+
+def authenticate_user(email: str, password: str):
+    user = get_user_by_email(email)
+    if not user:
+        return None
+
+    stored_password = user["password"] or ""
+    if not verify_password(stored_password, password):
+        return None
+
+    if stored_password == password:
+        conn = get_db()
+        conn.execute(
+            "UPDATE users SET password = ? WHERE id = ?",
+            (generate_password_hash(password), user["id"]),
+        )
+        conn.commit()
+        conn.close()
+
+    return user
+
+
+def save_analysis_record(scores: dict, category: str) -> None:
+    user = session.get("user") or {}
+    user_email = user.get("email")
+    user_name = user.get("name")
+
+    conn = get_db()
+    conn.execute(
+        """
+        INSERT INTO analysis_history (
+            user_email, user_name, category, overall_score, skills_score,
+            education_score, projects_score, experience_score,
+            formatting_score, ats_score
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        """,
+        (
+            user_email,
+            user_name,
+            category,
+            scores.get("overall"),
+            scores.get("skills"),
+            scores.get("education"),
+            scores.get("projects"),
+            scores.get("experience"),
+            scores.get("formatting"),
+            scores.get("ats"),
+        ),
+    )
+    conn.commit()
+    conn.close()
+
+
+init_db()
 
 
 def allowed_file(filename: str) -> bool:
@@ -48,9 +183,67 @@ PORTFOLIO_SUGGESTIONS = {
 }
 
 
+@app.route("/signin", methods=["GET", "POST"])
+def signin():
+    if request.method == "POST":
+        email = request.form.get("email", "").strip()
+        password = request.form.get("password", "").strip()
+
+        if not email or not password:
+            return render_template("auth.html", mode="signin", error="Please enter your email and password.")
+
+        user = authenticate_user(email, password)
+        if not user:
+            return render_template("auth.html", mode="signin", error="Invalid email or password.")
+
+        session["user"] = {"email": user["email"], "name": user["name"]}
+        return redirect(url_for("index"))
+
+    return render_template("auth.html", mode="signin", current_user=session.get("user"))
+
+
+@app.route("/signup", methods=["GET", "POST"])
+def signup():
+    if request.method == "POST":
+        name = request.form.get("name", "").strip()
+        email = request.form.get("email", "").strip()
+        password = request.form.get("password", "").strip()
+        confirm_password = request.form.get("confirm_password", "").strip()
+
+        if not name or not email or not password or not confirm_password:
+            return render_template("auth.html", mode="signup", error="Please fill in all fields.")
+
+        if password != confirm_password:
+            return render_template("auth.html", mode="signup", error="Passwords do not match.")
+
+        if get_user_by_email(email):
+            return render_template("auth.html", mode="signup", error="An account with this email already exists.")
+
+        create_user(name, email, password)
+        session["user"] = {"email": email.lower(), "name": name}
+        return redirect(url_for("index"))
+
+    return render_template("auth.html", mode="signup", current_user=session.get("user"))
+
+
+@app.route("/signout")
+def signout():
+    session.pop("user", None)
+    return redirect(url_for("signin"))
+
+
+@app.route("/profile")
+def profile():
+    if "user" not in session:
+        return redirect(url_for("signin"))
+    return render_template("profile.html", current_user=session.get("user"))
+
+
 @app.route("/")
 def index():
-    return render_template("index.html", categories=available_categories())
+    if "user" not in session:
+        return redirect(url_for("signup"))
+    return render_template("index.html", categories=available_categories(), current_user=session.get("user"))
 
 
 @app.route("/analyze", methods=["POST"])
@@ -94,10 +287,10 @@ def analyze():
 
     jobs = recommend_jobs(resume_text)
 
-    chart_data_uri = None
+    chart_data = None
     if category:
         required = CATEGORY_REQUIREMENTS.get(category, [])
-        chart_data_uri = generate_skill_gap_chart(required, found_skills)
+        chart_data = generate_skill_gap_chart(required, found_skills)
 
     jd_match = None
     if job_description:
@@ -112,6 +305,7 @@ def analyze():
 
     suggestions = build_suggestions(scores, missing)
     portfolio_ideas = PORTFOLIO_SUGGESTIONS.get(category, PORTFOLIO_SUGGESTIONS["Software Engineer"])
+    save_analysis_record(scores, category)
 
     # Store just enough context for the chatbot to reference later
     session["chat_context"] = {
@@ -128,11 +322,12 @@ def analyze():
         missing_skills=missing,
         category=category,
         jobs=jobs,
-        chart_data_uri=chart_data_uri,
+        chart_data=chart_data,
         jd_match=jd_match,
         predicted_category=predicted_category,
         suggestions=suggestions,
         portfolio_ideas=portfolio_ideas,
+        current_user=session.get("user"),
     )
 
 
@@ -157,7 +352,7 @@ def build_suggestions(scores: dict, missing_skills: list) -> list:
 def chat_page():
     if "chat_context" not in session:
         return redirect(url_for("index"))
-    return render_template("chat.html")
+    return render_template("chat.html", current_user=session.get("user"))
 
 
 @app.route("/api/chat", methods=["POST"])
